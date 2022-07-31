@@ -51,7 +51,7 @@ When we receive ACCEPTED, increment order_id, wait for the next SIGUSR1
 To run the tests, simply run ./run_tests.
 E2E tests all functionality, cmocka tests (linked-list) orderbook functionality and negative cases eg. invalid input to functions.
 
-============ EXCHANGE E2E ============
+### ============ EXCHANGE E2E ============
 BUY
 1. BUY levels are correctly updated
 2. multiple products, multiple BUY levels
@@ -82,6 +82,6 @@ FILL
 1. fill BUY orders from SELL order
 2. fill SELL orders from BUY order
 
-============ AUTO-TRADER E2E ============
+### ============ AUTO-TRADER E2E ============
 1. BUY/SELL market orders
 2. BUY//SELL/AMEND market orders
