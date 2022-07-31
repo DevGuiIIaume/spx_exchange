@@ -1,10 +1,11 @@
-**How my exchange works**
-*SETUP*
+### How my exchange works
+
+#### SETUP
 Store command-line arguments into arrays. fork exchange, then exec (using trader filename argument) to replace process image with trader image. trader_filename and trader_id are arguments.
 
 Open named pipes on both sides to ensure exchange2trader/trader2exchange communication.
 
-*COMMAND PROCESSING*
+#### COMMAND PROCESSING
 Diagram: https://imgur.com/a/wowj5LP
 
 Orderbook is linked-list of product_orders. Product_orders contain BUY/SELL linked-lists corresponding product.
@@ -22,10 +23,10 @@ If ordermatch, fill orders.
 
 Exchange writes first, then sends SIGUSR1.
 
-*TEARDOWN*
+#### TEARDOWN
 If the signal is SIGCHLD, we disconnect the trader and decrement count of connected traders. Exit when no more connected traders. Cleanup memory/named pipes.
 
-**Explanation of my design decisions for the trader and how it's fault-tolerant**
+### Explanation of my design decisions for the trader and how it's fault-tolerant
 
 Diagram: https://imgur.com/a/G1PBGSm
 
@@ -45,7 +46,7 @@ Nested while loop to periodically re-sends the SIGUSR1 until receive ACCEPTED. B
 
 When we receive ACCEPTED, increment order_id, wait for the next SIGUSR1
 
-**Descriptions of my tests and how to run them.**
+### Descriptions of my tests and how to run them
 
 To run the tests, simply run ./run_tests.
 E2E tests all functionality, cmocka tests (linked-list) orderbook functionality and negative cases eg. invalid input to functions.
