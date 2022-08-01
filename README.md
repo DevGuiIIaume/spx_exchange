@@ -9,9 +9,9 @@ Open named pipes on both sides to ensure exchange2trader/trader2exchange communi
 Diagram: https://imgur.com/a/wowj5LP
 
 Orderbook is linked-list of product_orders. Product_orders contain BUY/SELL linked-lists corresponding product
--BUY arranged in descending order
--SELL arranged in ascending order
--Both maintain price-time priority
+- BUY arranged in descending order
+- SELL arranged in ascending order
+- Both maintain price-time priority
 
 Main loop waits for a signal. Signals queued with PID of process that sent signal. Read named pipe of the corresponding trader, process the command.
 
