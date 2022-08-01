@@ -8,7 +8,7 @@ Open named pipes on both sides to ensure exchange2trader/trader2exchange communi
 #### COMMAND PROCESSING
 Diagram: https://imgur.com/a/wowj5LP
 
-Orderbook is linked-list of product_orders. Product_orders contain BUY/SELL linked-lists corresponding product.
+Orderbook is linked-list of product_orders. Product_orders contain BUY/SELL linked-lists corresponding product
 -BUY arranged in descending order
 -SELL arranged in ascending order
 -Both maintain price-time priority
